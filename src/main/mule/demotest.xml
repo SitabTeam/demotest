@@ -5,7 +5,7 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
         <http:listener-connection host="0.0.0.0" port="8081" />
     </http:listener-config>
     <apikit:config name="employee-config" api="employee.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
-    <api-gateway:autodiscovery apiId="17820041" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="049ee54a-f4f1-42cf-a064-0f93a519e6a5" flowRef="employee-main" />
+    <api-gateway:autodiscovery apiId="17820041" ignoreBasePath="true" doc:name="API Autodiscovery" doc:id="1b01cde7-c105-4e08-8a2c-1de875ed671e" flowRef="employee-main" />
 	<flow name="employee-main">
         <http:listener config-ref="employee-httpListenerConfig" path="/api/*">
             <http:response statusCode="#[vars.httpStatus default 200]">
@@ -99,7 +99,7 @@ output application/json
         </error-handler>
     </flow>
     <flow name="get:\employees:employee-config">
-		<ee:transform doc:name="Transform Message" doc:id="dd891b96-346a-4ff6-94a1-7a9bd5ee9a59" >
+		<ee:transform doc:name="Transform Message" doc:id="1b4aa4db-368b-4104-9e84-03214ca083e5" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
